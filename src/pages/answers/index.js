@@ -17,9 +17,10 @@ function Browse() {
 				// doc.data() is never undefined for query doc snapshots
 				// ans.push(doc.id);
 				a.push(doc.id);
+				setAns(a);
 			});
 		})();
-		setAns(a);
+		// setAns(a);
 	}, []);
 
 	return (
