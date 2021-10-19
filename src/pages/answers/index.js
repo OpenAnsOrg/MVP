@@ -1,6 +1,6 @@
 import { Typography, Box } from "@mui/material";
 import AnswerCard from "../../../components/AnswerCard";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { storeHandle } from "../../../firebase/firebaseClient";
 import { useEffect, useState } from "react";
 
@@ -11,7 +11,8 @@ function Browse() {
 		let a = [];
 		(async function () {
 			const ansRef = collection(storeHandle, "answers");
-			const res = await getDocs(ansRef);
+			const q = query(ansRef, where("fileAdded", "==", true));
+			const res = await getDocs(q);
 			res.forEach((doc) => {
 				// doc.data() is never undefined for query doc snapshots
 				// ans.push(doc.id);
