@@ -28,9 +28,6 @@ function Browse() {
 			<Typography variant="h3" sx={{ my: "1rem" }}>
 				Answers
 			</Typography>
-			<Typography variant="caption" sx={{ my: "1rem" }}>
-				Select &quot;answers&quot; from the menu again if no answer is visible
-			</Typography>
 			{ans?.map((answer, i) => {
 				// console.log("From answers", answer, i);
 				return <AnswerCard ansid={answer} key={i} />;

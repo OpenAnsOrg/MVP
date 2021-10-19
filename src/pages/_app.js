@@ -30,7 +30,7 @@ export default function MyApp(props) {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						justifyContent: "space-between",
+						justifyContent: "center",
 						minHeight: "85vh",
 					}}
 				>
