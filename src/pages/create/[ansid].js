@@ -13,6 +13,7 @@ import { useFormik } from "formik";
 import Loading from "../../../components/Loading";
 import { useState } from "react";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import Link from "next/link";
 
 const UploadPy = ({ id, data }) => {
 	const [user, loading] = useAuthState(authHandle);
@@ -142,7 +143,6 @@ const UploadPy = ({ id, data }) => {
 							Choose File
 							<input type="file" accept=".py" hidden onChange={handleChange} />
 						</Button>
-						<Typography variant="caption">Only upload .py files</Typography>
 					</Box>
 					{okFile == true ? (
 						<Button
@@ -177,6 +177,13 @@ const UploadPy = ({ id, data }) => {
 						Upload File
 					</Button> */}
 				</Box>
+				<Typography variant="caption">
+					<Link href="/answer-tips">
+						<a style={{ color: "white" }}>
+							Answer Tips. Check before uploading.
+						</a>
+					</Link>
+				</Typography>
 			</Box>
 
 			<Divider />
